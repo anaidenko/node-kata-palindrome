@@ -3,11 +3,12 @@ export class Palindrome {
     if (!value) {
       return true;
     }
-    const valueReverse = value
+    const valueNormalized = value.replace(/[^a-z0-9]/gi, '').toUpperCase();
+    const valueNormalizedReverse = valueNormalized
       .split('')
       .reverse()
       .join('');
-    if (value.toUpperCase() === valueReverse.toUpperCase()) {
+    if (valueNormalized === valueNormalizedReverse) {
       return true;
     }
     return false;

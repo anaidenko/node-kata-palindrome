@@ -25,5 +25,10 @@ describe('Palindrome', () => {
       expect(new Palindrome().test('Ada')).toBe(true);
       expect(new Palindrome().test('yaY')).toBe(true);
     });
+
+    it('should ignore whitespaces and punctuation', () => {
+      expect(new Palindrome().test('Race car')).toBe(true);
+      expect(new Palindrome().test('Race, car!')).toBe(true);
+    });
   });
 });
